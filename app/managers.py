@@ -19,7 +19,6 @@ class ActorManager:
             self.connection.commit()
 
     def all(self) -> list[Actor]:
-        with sqlite3.connect(self.db_name) as connection:
             cursor = self.connection.cursor()
             query = (
                 f"SELECT id, first_name, last_name "
